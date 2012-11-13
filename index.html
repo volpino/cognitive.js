@@ -30,23 +30,19 @@
         </div>
       </div>
 
-
       <div id="cognitive-test">
 
         <div>
           Time: <span class="cognitive-timer"></span>
         </div>
+
         <div class="cognitive-content">
           <div id="first" data-next="#second" data-timeout="5">
-
             Welcome! this will fade out in a few seconds...
-
           </div>
 
           <div id="second" data-next="#third">
-
             Ehi! This is your first question!
-
             <form class="cognitive-form form-horizontal" data-answer-result="42">
               <label for="result">Answer (hint: the answer is 42):</label>
               <input type="text" name="result" placeholder="Insert here your answer">
@@ -56,9 +52,7 @@
           </div>
 
           <div id="third" data-next="#fourth">
-
             How much is 2+2?
-
             <form class="cognitive-form form-horizontal" data-answer-result="4">
               <label for="result">Answer:</label>
               <input type="text" name="result">
@@ -66,7 +60,6 @@
             </form>
             <button class="cognitive-skip btn">Skip</button>
           </div>
-
 
           <div id="fourth">
             <h3>This is the end!</h3>
@@ -82,7 +75,7 @@
       <script src="static/javascripts/cognitive.js"></script>
       <script>
         $(document).ready(function () {
-          $("#cognitive-test").cognitive({start: "#first"});
+          window.cognitiveTest = new Cognitive($("#cognitive-test"), {start: "#first"});
         });
       </script>
   </body>
